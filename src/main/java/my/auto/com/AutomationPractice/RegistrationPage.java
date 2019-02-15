@@ -40,6 +40,7 @@ public class RegistrationPage {
 		
 		System.out.println("Ragistration page");
 
+		
 		FirstnameTextBox.sendKeys("supriya");
 
 		LastnameTextBox.sendKeys("gadad");
