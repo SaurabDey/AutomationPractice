@@ -31,14 +31,14 @@ import org.testng.annotations.AfterTest;
 
 public class GRIDClass {
 	WebDriver Driver;
-
-
+	ExtentReports extent;
+	ExtentTest test;
 	@Test
 	public void f() throws IOException {
 
 		CommonUtility common = new CommonUtility(Driver);
 		
-			SignUPPage sign = new SignUPPage(Driver);
+			SignUPPage sign = new SignUPPage(Driver,test);
 			sign.signUp();
 
 			RegistrationPage regis = new RegistrationPage(Driver);
@@ -49,6 +49,14 @@ public class GRIDClass {
 	@Parameters("browserName")
 	@BeforeTest
 	public void beforeTest(String value) throws MalformedURLException {
+		
+		ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter("Resource/ExtentReport.html");
+		
+		extent = new ExtentReports();
+		extent.attachReporter(htmlReporter);
+		
+		test = extent.createTest("BrowserTest");
+		test.info("Started my test");
 		
 		DesiredCapabilities capabilities= new DesiredCapabilities();
 		capabilities.setBrowserName(value);
@@ -61,11 +69,14 @@ public class GRIDClass {
 		Driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		Driver.get("http://automationpractice.com/index.php?controller=authentication&back=my-account");
 		
+		
 	}
 
 	@AfterTest
 	public void afterTest() {		
 		Driver.quit();
+		test.info("Ended my test");
+		extent.flush();
 	}
 
 }
