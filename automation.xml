@@ -1,9 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="Suite" parallel="tests">
+	<test name="Test1">
+		<parameter name="browserName" value="chrome"></parameter>
+		<classes>
+			<class name="my.auto.com.AutomationPractice.GRIDClass" />
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="Test2">
+		<parameter name="browserName" value="chrome"></parameter>
+		<classes>
+			<class name="my.auto.com.AutomationPractice.GRIDClass" />
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="Test3">
+		<parameter name="browserName" value="chrome"></parameter>
+		<classes>
+			<class name="my.auto.com.AutomationPractice.GRIDClass" />
+		</classes>
+	</test> <!-- Test -->
+	
 	<test name="Test4">
 		<parameter name="browserName" value="chrome"></parameter>
 		<classes>
-			<class name="my.auto.com.AutomationPractice.MaintestNg" />
+			<class name="my.auto.com.AutomationPractice.GRIDClass" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
