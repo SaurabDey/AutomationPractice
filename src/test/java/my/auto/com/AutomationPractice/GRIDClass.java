@@ -53,7 +53,7 @@ public class GRIDClass {
 		DesiredCapabilities capabilities= new DesiredCapabilities();
 		capabilities.setBrowserName(value);
 
-		Driver= new RemoteWebDriver(new URL("http://192.168.0.4:4444/wd/hub"), capabilities);
+		Driver= new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities);
 
 		Driver.manage().window().maximize();
 		

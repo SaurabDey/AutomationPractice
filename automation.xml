@@ -6,14 +6,23 @@
 			<class name="my.auto.com.AutomationPractice.GRIDClass" />
 		</classes>
 	</test> <!-- Test -->
+	
 	<test name="Test2">
-		<parameter name="browserName" value="firefox"></parameter>
+		<parameter name="browserName" value="chrome"></parameter>
 		<classes>
 			<class name="my.auto.com.AutomationPractice.GRIDClass" />
 		</classes>
 	</test> <!-- Test -->
+	
 	<test name="Test3">
-		<parameter name="browserName" value="internet explorer"></parameter>
+		<parameter name="browserName" value="chrome"></parameter>
+		<classes>
+			<class name="my.auto.com.AutomationPractice.GRIDClass" />
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="Test4">
+		<parameter name="browserName" value="chrome"></parameter>
 		<classes>
 			<class name="my.auto.com.AutomationPractice.GRIDClass" />
 		</classes>
