@@ -1,5 +1,16 @@
 package my.auto.com.AutomationPractice;
 
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.ExtentReports;
@@ -9,25 +20,19 @@ import com.aventstack.extentreports.MediaEntityModelProvider;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Parameters;
-
-import java.io.File;
-import java.io.IOException;
-import java.util.concurrent.TimeUnit;
-
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.testng.annotations.AfterTest;
+/**
+ * @author Lenovo
+ *
+ */
 
 public class MaintestNg {
 	WebDriver Driver;
-	ExtentReports extent;
+	/**
+	 * @author Saurab
+	 * make ExtentHtmlReporter ExtentReports static to get parallel report
+	 */
+	static ExtentHtmlReporter htmlReporter;
+	static ExtentReports extent;
 	ExtentTest test;
 
 	@Test
@@ -35,7 +40,7 @@ public class MaintestNg {
 
 		CommonUtility common = new CommonUtility(Driver);
 		try {
-			SignUPPage sign = new SignUPPage(Driver);
+			SignUPPage sign = new SignUPPage(Driver,test);
 			sign.signUp();
 			test.pass("signUp method was successful");
 		} catch (Exception e) {
@@ -58,14 +63,18 @@ public class MaintestNg {
 	@BeforeTest
 	public void beforeTest(String value) {
 
-		ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter("Resource/ExtentReport.html");
+		htmlReporter = new ExtentHtmlReporter("Resource/MakeReport.html");
 		htmlReporter.config().setTheme(Theme.DARK);
 		htmlReporter.config().setChartVisibilityOnOpen(true);
 		htmlReporter.setAppendExisting(true);
 
 		extent = new ExtentReports();
 		extent.attachReporter(htmlReporter);
-		test = extent.createTest("SaurabFirstTest");
+		/**
+		 * @author Saurab
+		 * this is create new test for each browser
+		 */
+		test = extent.createTest("Test "+value);
 		test.info("Started my test");
 
 		String browser = value;
@@ -99,7 +108,17 @@ public class MaintestNg {
 	public void afterTest() {
 		test.info("Execution over");
 		Driver.quit();
+		
+	}
+	
+	/**
+	 * @author Saurab
+	 * flush using @AfterSuite will generate the parallel report
+	 */
+	@AfterSuite
+	public void afterSuite() {
 		extent.flush();
 	}
+	
 
 }
