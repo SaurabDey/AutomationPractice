@@ -31,8 +31,8 @@ public class SignUPPage{
 		PageFactory.initElements(Driver, this);
 	}
 	public void signUp() {
-		
-		test.info("Started signUp");
+				
+		test.info("inside Sign up method -------");
 		
 		SigninButton.click();
 
@@ -40,6 +40,7 @@ public class SignUPPage{
 
 		CreateanaccountButton.click();
 		
-		test.info("Ended signUp");
+		test.info("completed Sign up method------");
+
 	}
 }

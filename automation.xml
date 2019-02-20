@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="Suite" parallel="tests">
-		
+	<test name="Test1">
+		<parameter name="browserName" value="ie"></parameter>
+		<classes>
+			<class name="my.auto.com.AutomationPractice.MaintestNg" />
+		</classes>
+	</test> <!-- Test -->	
 	<test name="Test2">
 		<parameter name="browserName" value="chrome"></parameter>
 		<classes>
-			<class name="my.auto.com.AutomationPractice.GRIDClass" />
+			<class name="my.auto.com.AutomationPractice.MaintestNg" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

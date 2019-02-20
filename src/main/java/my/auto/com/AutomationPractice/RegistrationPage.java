@@ -1,5 +1,7 @@
 package my.auto.com.AutomationPractice;
 
+import java.io.IOException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -32,18 +34,21 @@ public class RegistrationPage {
 		Driver=driver2;
 		PageFactory.initElements(Driver, this);
 	}
-	public void registration() {
+	public void registration() throws IOException {
+		
+		ExcelReadWrite erw= new ExcelReadWrite();
+		String[] myValues =erw.readExcel();
 		
 		System.out.println("Ragistration page");
 		
 		genderRadioButton.click();
 
-		FirstnameTextBox.sendKeys("Damini");
+		FirstnameTextBox.sendKeys(myValues[0]);
 
 		System.out.println("welcome ");
-		LastnameTextBox.sendKeys("gadad");
+		LastnameTextBox.sendKeys(myValues[1]);
 	
-		passwordTextBox.sendKeys("sggg");
+		passwordTextBox.sendKeys(myValues[2]);
 
 		Select DayButton = new Select(selectDay);
 		DayButton.selectByIndex(23);

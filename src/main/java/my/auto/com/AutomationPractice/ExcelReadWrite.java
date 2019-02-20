@@ -10,7 +10,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelReadWrite {
 
-	public static void main(String[] args) throws IOException {
+	public String[] readExcel() throws IOException {
 		
 		File f=new File("Resource/Book.xlsx");
 		FileInputStream fis= new FileInputStream(f);
@@ -18,15 +18,24 @@ public class ExcelReadWrite {
 		XSSFWorkbook exc= new XSSFWorkbook(fis);
 		XSSFSheet sh= exc.getSheet("selenium");
 		
-		String user= sh.getRow(1).getCell(0).getStringCellValue();
+		String first= sh.getRow(1).getCell(0).getStringCellValue();
 		
-		String pass= sh.getRow(1).getCell(1).getStringCellValue();
+		String last= sh.getRow(1).getCell(1).getStringCellValue();
 		
-		System.out.println(user +" "+pass);
+		String pass= sh.getRow(1).getCell(2).getStringCellValue();
+		
+		System.out.println(first+" "+last+" "+pass);
+		
+		
+		String [] values= new String[3];
+		values[0]=first;
+		values[1]=last;
+		values[2]=pass;
 		
 		exc.close();
 		fis.close();
 		
+		return values;
 	}
 
 }
