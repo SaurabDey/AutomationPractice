@@ -1,4 +1,4 @@
-package my.auto.com.AutomationPractice;
+package my.auto.com.AutomationPractice.Page;
 
 import java.io.IOException;
 
@@ -8,6 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
+
+import my.auto.com.AutomationPractice.utilities.ExcelReadWrite;
 
 public class RegistrationPage {
 	

@@ -1,4 +1,4 @@
-package my.auto.com.AutomationPractice;
+package my.auto.com.AutomationPractice.Page;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.aventstack.extentreports.ExtentTest;
+
+import my.auto.com.AutomationPractice.utilities.DBClass;
 
 public class SignUPPage{
 	
@@ -32,11 +34,14 @@ public class SignUPPage{
 	}
 	public void signUp() {
 				
+		DBClass db= new DBClass();
+		String emailFromDB=db.getDataFromDB();
+		
 		test.info("inside Sign up method -------");
 		
 		SigninButton.click();
 
-		EmailaddressTextBox.sendKeys("siddhant456chatur@gmail.com");
+		EmailaddressTextBox.sendKeys(emailFromDB);
 
 		CreateanaccountButton.click();
 		

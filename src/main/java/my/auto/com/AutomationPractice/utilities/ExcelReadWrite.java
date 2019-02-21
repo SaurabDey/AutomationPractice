@@ -1,4 +1,4 @@
-package my.auto.com.AutomationPractice;
+package my.auto.com.AutomationPractice.utilities;
 
 import java.io.File;
 import java.io.FileInputStream;

@@ -20,6 +20,10 @@ import com.aventstack.extentreports.MediaEntityModelProvider;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
+import my.auto.com.AutomationPractice.Page.RegistrationPage;
+import my.auto.com.AutomationPractice.Page.SignUPPage;
+import my.auto.com.AutomationPractice.utilities.CommonUtility;
+
 /**
  * @author Lenovo
  *
