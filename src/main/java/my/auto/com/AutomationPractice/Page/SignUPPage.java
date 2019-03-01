@@ -37,7 +37,7 @@ public class SignUPPage{
 		DBClass db= new DBClass();
 		String emailFromDB=db.getDataFromDB();
 		
-		test.info("inside Sign up method -------");
+		//test.info("inside Sign up method -------");
 		
 		SigninButton.click();
 
@@ -45,7 +45,7 @@ public class SignUPPage{
 
 		CreateanaccountButton.click();
 		
-		test.info("completed Sign up method------");
+		//test.info("completed Sign up method------");
 
 	}
 }

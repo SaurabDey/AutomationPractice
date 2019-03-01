@@ -19,7 +19,6 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>3.8.1</version>
-			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
@@ -56,6 +55,29 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>8.0.11</version>
 		</dependency>
+<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-junit</artifactId>
+			<version>1.2.5</version>
+		</dependency>
+<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-java -->
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>1.2.5</version>
+		</dependency>
+<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-core -->
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-core</artifactId>
+			<version>1.2.5</version>
+		</dependency>
+<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-testng -->
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-testng</artifactId>
+			<version>1.2.5</version>
+		</dependency>
 
 	</dependencies>
 
@@ -70,9 +92,17 @@
 				<version>2.14.1</version>
 				<configuration>
 					<!-- Suite testng xml file to consider for test execution -->
-					<suiteXmlFiles>
+					<!-- <suiteXmlFiles>
 						<suiteXmlFile>automation.xml</suiteXmlFile>
-					</suiteXmlFiles>
+						<suiteXmlFile>cucumber.xml</suiteXmlFile>
+					</suiteXmlFiles> -->
+					
+					<parallel>classes</parallel>
+					<forkMode>perthread</forkMode>
+					<threadCount>3</threadCount>
+					<includes>
+						<include>**/*RunnerClass.java</include>
+					</includes>
 				</configuration>
 			</plugin>
 
