@@ -1,0 +1,22 @@
+2019-03-25 08:49:15 INFO com.AutomationPractice.MainLog4j:30 - browser started successfully
+2019-03-25 08:49:22 INFO com.AutomationPractice.MainLog4j:33 - URL opened successfully
+2019-03-25 08:49:26 INFO com.AutomationPractice.MainLog4j:52 - SignUPPage was successfully executed
+2019-03-25 08:49:27 INFO com.AutomationPractice.MainLog4j:62 - closing the browser
+2019-03-25 08:53:11 DEBUG com.AutomationPractice.MainLog4j:30 - debug messsage-----------
+2019-03-25 08:53:11 INFO com.AutomationPractice.MainLog4j:31 - browser started successfully
+2019-03-25 08:53:11 WARN com.AutomationPractice.MainLog4j:32 - warn messsage-----------
+2019-03-25 08:53:11 ERROR com.AutomationPractice.MainLog4j:33 - error messsage-----------
+2019-03-25 08:53:11 FATAL com.AutomationPractice.MainLog4j:34 - fatal messsage-----------
+2019-03-25 08:53:21 INFO com.AutomationPractice.MainLog4j:38 - URL opened successfully
+2019-03-25 08:53:25 INFO com.AutomationPractice.MainLog4j:57 - SignUPPage was successfully executed
+2019-03-25 08:53:26 INFO com.AutomationPractice.MainLog4j:67 - closing the browser
+2019-03-25 08:57:48 DEBUG com.AutomationPractice.MainLog4j:32 - debug messsage-----------
+2019-03-25 08:57:48 INFO com.AutomationPractice.MainLog4j:33 - browser started successfully
+2019-03-25 08:57:48 WARN com.AutomationPractice.MainLog4j:34 - warn messsage-----------
+2019-03-25 08:57:48 ERROR com.AutomationPractice.MainLog4j:35 - error messsage-----------
+2019-03-25 08:57:48 FATAL com.AutomationPractice.MainLog4j:36 - fatal messsage-----------
+2019-03-25 08:57:54 INFO com.AutomationPractice.MainLog4j:40 - URL opened successfully
+2019-03-25 08:57:54 INFO AutomationPractice.Page.SignUPPage:42 - we are inside signUp method
+2019-03-25 08:57:57 INFO AutomationPractice.Page.SignUPPage:50 - end of signUp method
+2019-03-25 08:57:57 INFO com.AutomationPractice.MainLog4j:51 - SignUPPage was successfully executed
+2019-03-25 08:57:58 INFO com.AutomationPractice.MainLog4j:61 - closing the browser

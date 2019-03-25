@@ -1,5 +1,6 @@
 package my.auto.com.AutomationPractice.Page;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -7,9 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.aventstack.extentreports.ExtentTest;
 
-import my.auto.com.AutomationPractice.utilities.DBClass;
-
 public class SignUPPage{
+	static Logger log = Logger.getLogger(SignUPPage.class);
 	
 	@FindBy (xpath="//a[@class='login'][@title='Log in to your customer account']")
 	WebElement SigninButton;
@@ -33,17 +33,21 @@ public class SignUPPage{
 		PageFactory.initElements(Driver, this);
 	}
 	public void signUp() {
-				
-		DBClass db= new DBClass();
-		String emailFromDB=db.getDataFromDB();
+		
+		//database code
+//		DBClass db= new DBClass();
+//		String emailFromDB=db.getDataFromDB();
 		
 		//test.info("inside Sign up method -------");
+		log.info("we are inside signUp method");
 		
 		SigninButton.click();
 
-		EmailaddressTextBox.sendKeys(emailFromDB);
+		EmailaddressTextBox.sendKeys("saurab");
 
 		CreateanaccountButton.click();
+		
+		log.info("end of signUp method");
 		
 		//test.info("completed Sign up method------");
 

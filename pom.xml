@@ -20,6 +20,13 @@
 			<artifactId>junit</artifactId>
 			<version>3.8.1</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/log4j/log4j -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-server</artifactId>
@@ -55,29 +62,41 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>8.0.11</version>
 		</dependency>
-<dependency>
+		<dependency>
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-junit</artifactId>
 			<version>1.2.5</version>
 		</dependency>
-<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-java -->
+		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-java -->
 		<dependency>
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-java</artifactId>
 			<version>1.2.5</version>
 		</dependency>
-<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-core -->
+		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-core -->
 		<dependency>
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-core</artifactId>
 			<version>1.2.5</version>
 		</dependency>
-<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-testng -->
+		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-testng -->
 		<dependency>
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-testng</artifactId>
 			<version>1.2.5</version>
 		</dependency>
+		<dependency>
+			<groupId>io.appium</groupId>
+			<artifactId>java-client</artifactId>
+			<version>6.1.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<version>3.3.0</version>
+		</dependency>
+
 
 	</dependencies>
 
@@ -92,11 +111,9 @@
 				<version>2.14.1</version>
 				<configuration>
 					<!-- Suite testng xml file to consider for test execution -->
-					<!-- <suiteXmlFiles>
-						<suiteXmlFile>automation.xml</suiteXmlFile>
-						<suiteXmlFile>cucumber.xml</suiteXmlFile>
-					</suiteXmlFiles> -->
-					
+					<!-- <suiteXmlFiles> <suiteXmlFile>automation.xml</suiteXmlFile> <suiteXmlFile>cucumber.xml</suiteXmlFile> 
+						</suiteXmlFiles> -->
+
 					<parallel>classes</parallel>
 					<forkMode>perthread</forkMode>
 					<threadCount>3</threadCount>
